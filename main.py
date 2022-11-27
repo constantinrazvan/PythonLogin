@@ -1,5 +1,7 @@
 user_choice = int(input("1. Register \n2. Login \n"))
 
+#TODO: Use bcrypt for hashing the password
+
 #model db
 email = "Email:  "
 password = "Password: "
