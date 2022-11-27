@@ -9,7 +9,7 @@ def registerForm():
     user_confirmEmail = input(str("Confirm Email: "))
 
     # if user_email exits, try to login
-    with open(r"db", "r") as f:
+    with open(r"db.txt", "r") as f:
         for index, line in enumerate(f):
             if user_email in line:
                 print("This email is already used! Please try to login!")
@@ -27,7 +27,7 @@ def registerForm():
         error_message_register_password = "Your password doesn't match!"
         print(error_message_register_password)
 
-    users = open("db", "w")
+    users = open("db.txt", "w")
     users.write(email + user_email + password + user_password)
     users.close()
 
@@ -38,7 +38,7 @@ def loginForm():
     user_password = input(str(" Password: "))
 
     # read if the user credentials are correct, if not throw error
-    with open(r"db", 'r') as f:
+    with open(r"db.txt", 'r') as f:
         for index, line in enumerate(f):
             if user_email in line:
                 print('You logged in!')
